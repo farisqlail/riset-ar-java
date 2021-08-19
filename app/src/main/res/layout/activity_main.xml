@@ -6,58 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-<fragment
-    android:id="@+id/sceneform_ux_fragment"
-    android:name="com.google.ar.sceneform.ux.ArFragment"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"/>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_gravity="center"
+    <fragment
+        android:id="@+id/sceneform_ux_fragment"
+        android:name="com.google.ar.sceneform.ux.ArFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent" />
 
+    <HorizontalScrollView
+        android:layout_width="320dp"
+        android:layout_height="86dp">
+        
         <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-                    <ImageView
-                        android:id="@+id/cow"
-                        android:src="@drawable/cow"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/cow"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cow" />
 
-                    <TextView
-                        android:layout_gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Gambar Sapi"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="20dp"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-                    <ImageView
-                        android:id="@+id/dog"
-                        android:src="@drawable/dog"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                    <TextView
-                        android:layout_gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Gambar Sapi"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="20dp"/>
+            <ImageView
+                android:id="@+id/dog"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dog" />
 
         </LinearLayout>
 
 
-    </LinearLayout>
+
+
+    </HorizontalScrollView>
 
 </FrameLayout>
