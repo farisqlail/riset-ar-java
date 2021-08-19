@@ -61,10 +61,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void setupModel() {
-        ModelRenderable renderable = null;
+//        ModelRenderable renderable = null;
         ModelRenderable.builder()
                     .setSource(this, R.raw.cow)
-                    .build().thenAccept(randerable -> cowRenderable = renderable)
+                    .build().thenAccept(renderable -> cowRenderable = renderable)
                     .exceptionally(
                             throwable -> {
                                 Toast.makeText(this, "unable to load cow model", Toast.LENGTH_SHORT).show();
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         ModelRenderable.builder()
                 .setSource(this, R.raw.dog)
-                .build().thenAccept(randerable -> dogRenderable = renderable)
+                .build().thenAccept(renderable -> dogRenderable = renderable)
                 .exceptionally(
                         throwable -> {
                             Toast.makeText(this, "unable to load dog model", Toast.LENGTH_SHORT).show();
