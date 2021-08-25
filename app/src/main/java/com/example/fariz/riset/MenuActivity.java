@@ -1,5 +1,6 @@
 package com.example.fariz.riset;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,7 +21,14 @@ public class MenuActivity extends AppCompatActivity {
         cow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                start
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            }
+        });
+
+        dog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), DogActivity.class));
             }
         });
     }

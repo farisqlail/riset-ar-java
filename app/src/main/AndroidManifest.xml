@@ -20,14 +20,15 @@
             android:name="com.google.ar.core"
             android:value="required" />
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".MenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".DogActivity"></activity>
     </application>
 
 </manifest>

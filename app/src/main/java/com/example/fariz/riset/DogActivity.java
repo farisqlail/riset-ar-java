@@ -1,23 +1,17 @@
 package com.example.fariz.riset;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.net.Uri;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.google.ar.core.Anchor;
 import com.google.ar.sceneform.AnchorNode;
-import com.google.ar.sceneform.rendering.Color;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
 
-public class MainActivity extends AppCompatActivity {
+public class DogActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
     private ModelRenderable cowRenderable, dogRenderable;
@@ -28,12 +22,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_dog);
 
         arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.ux_fragment);
 
         ModelRenderable.builder()
-                .setSource(this, Uri.parse("cow.sfb"))
+                .setSource(this, Uri.parse("dog.sfb"))
                 .build()
                 .thenAccept(renderable -> modelRenderable = renderable)
                 .exceptionally(
@@ -60,8 +54,5 @@ public class MainActivity extends AppCompatActivity {
             andy.select();
 
         });
-
-
-
     }
 }
