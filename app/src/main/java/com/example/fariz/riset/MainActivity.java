@@ -12,18 +12,21 @@ import android.widget.Toast;
 
 import com.google.ar.core.Anchor;
 import com.google.ar.sceneform.AnchorNode;
+import com.google.ar.sceneform.assets.RenderableSource;
 import com.google.ar.sceneform.rendering.Color;
 import com.google.ar.sceneform.rendering.ModelRenderable;
+import com.google.ar.sceneform.rendering.Renderable;
 import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
-    private ModelRenderable cowRenderable, dogRenderable;
 
     private ArFragment arFragment;
     private ModelRenderable modelRenderable;
+    private String MODEL_URL="https://github.com/farisqlail/assets-ar/blob/master/cow.fbx";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.ux_fragment);
 
+        //    Form Asset By Directory
         ModelRenderable.builder()
                 .setSource(this, Uri.parse("cow.sfb"))
                 .build()
@@ -60,8 +64,47 @@ public class MainActivity extends AppCompatActivity {
             andy.select();
 
         });
-
-
+//        setUpModel();
+//        setUpPlane();
 
     }
+
+//    private void setUpModel() {
+//        ModelRenderable.builder()
+//                .setSource(this, RenderableSource.builder().setSource(
+//                        this,
+//                        Uri.parse(MODEL_URL),
+//                        RenderableSource.SourceType.GLB)
+//                        .setScale(0.75f)
+//                        .setRecenterMode(RenderableSource.RecenterMode.ROOT)
+//                        .build())
+//                .setRegistryId(MODEL_URL)
+//                .build()
+//                .thenAccept(renderable -> modelRenderable = renderable)
+//                .exceptionally(throwable -> {
+//                    Toast.makeText(MainActivity.this, "Gak bisa reload assets", Toast.LENGTH_SHORT).show();
+//                    return null;
+//                });
+//
+//    }
+//
+//    private void setUpPlane() {
+//        arFragment.setOnTapArPlaneListener((((hitResult, plane, motionEvent) -> {
+//            Anchor anchor = hitResult.createAnchor();
+//            AnchorNode anchorNode = new AnchorNode(anchor);
+//            anchorNode.setParent(arFragment.getArSceneView().getScene());
+//            createModel(anchorNode);
+//        })));
+//    }
+//
+//    private void createModel(AnchorNode anchorNode) {
+//        TransformableNode node = new TransformableNode(arFragment.getTransformationSystem());
+//        node.setParent(anchorNode);
+//        node.setRenderable(modelRenderable);
+//        node.select();
+//    }
+
+
+
 }
+
